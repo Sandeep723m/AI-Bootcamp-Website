@@ -1,4 +1,8 @@
 {
+  "redirects": [
+    { "source": "/ai-bootcamps", "destination": "/bootcamps", "permanent": true },
+    { "source": "/ai-bootcamps/:path*", "destination": "/bootcamps", "permanent": true }
+  ],
   "rewrites": [
     { "source": "/(.*)", "destination": "/" }
   ]
