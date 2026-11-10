@@ -1065,29 +1065,12 @@ html{scroll-behavior:smooth}
 .principle-detail-copy li>span{display:block;font:600 13px/1.4 var(--display);color:#1769D2;margin-bottom:4px}
 .principle-detail-copy li>small{display:block;font:400 11px/1.55 var(--body);color:#475569}
 .principle-visual{grid-column:1;grid-row:1;display:grid;place-items:center;position:relative;min-width:0;min-height:100%;margin:0;padding:22px;background:linear-gradient(145deg,#EAF7FC,#F8FBFF);border-right:1px solid #DCE8F5;overflow:hidden}
-.principle-visual:before,.principle-visual:after{content:"";position:absolute;border:1px solid #B9D7EB;border-radius:50%;pointer-events:none}
-.principle-visual:before{width:270px;height:270px;right:-140px;top:-135px}
-.principle-visual:after{width:210px;height:210px;left:-115px;bottom:-105px}
-.principle-visual svg{position:relative;z-index:1;display:block;width:100%;height:auto;max-height:390px;overflow:visible;animation:principle-copy-in .25s ease both}
-.principle-visual .visual-ground{fill:none;stroke:#B7C9D8;stroke-width:2}
-.principle-visual .visual-connector{fill:none;stroke:#88A9BF;stroke-width:3;stroke-linecap:round;stroke-linejoin:round}
-.principle-visual .visual-node{fill:#FFFFFF;stroke:#8BB8D3;stroke-width:3}
-.principle-visual .visual-node-dot{fill:#1769D2}
-.principle-visual .visual-label{font:600 15px var(--body);fill:#334155}
-.principle-visual .visual-icon{fill:none;stroke:#1769D2;stroke-width:3;stroke-linecap:round;stroke-linejoin:round}
-.principle-visual .visual-accent-fill,.principle-visual .visual-step-number,.principle-visual .visual-board-dot{fill:#16A6C7}
-.principle-visual .visual-person{fill:#DDF3FC;stroke:#1769D2;stroke-width:3;stroke-linejoin:round}
-.principle-visual .visual-person-two{fill:#EAF2FF;stroke:#5279A9}
-.principle-visual .visual-person-three{fill:#FFF2F4;stroke:#E87991}
-.principle-visual .visual-heart{fill:#FF7B8F;stroke:#F43F5E;stroke-width:2}
-.principle-visual .visual-step-card,.principle-visual .visual-screen-inner{fill:#FFFFFF;stroke:#B7D2F3;stroke-width:2}
-.principle-visual .visual-number{font:600 12px var(--mono);fill:#FFFFFF}
-.principle-visual .visual-screen{fill:#DDF3FC;stroke:#1769D2;stroke-width:3}
-.principle-visual .visual-chip{fill:#FFFFFF;stroke:#16A6C7;stroke-width:3}
-.principle-visual .visual-icon-light{stroke:#FFFFFF}
-.principle-visual .visual-board{fill:#FFFFFF;stroke:#B7D2F3;stroke-width:3}
-.principle-visual .visual-board-line{fill:none;stroke:#16A6C7;stroke-width:4;stroke-linecap:round;stroke-linejoin:round}
-.principle-visual .visual-person-outline{fill:none;stroke:#1769D2;stroke-width:5;stroke-linecap:round;stroke-linejoin:round}
 @keyframes principle-copy-in{from{opacity:.45;transform:translateY(5px)}to{opacity:1;transform:translateY(0)}}
 @media(max-width:950px){.principles-explorer{grid-template-columns:minmax(235px,.8fr) minmax(0,1.2fr);gap:15px}.principle-detail{grid-template-columns:.78fr 1.22fr;grid-template-rows:minmax(480px,1fr)}.principle-detail-copy{padding:22px}.principle-detail-copy ul{gap:9px 12px}.principle-detail-copy li>small{font-size:10px}.principle-visual{padding:12px}}
 @media(max-width:680px){.principles.section-pad{padding:50px 18px 58px}.principles .principles-heading{grid-template-columns:1fr;gap:10px;margin-bottom:21px}.principles .principles-heading h2{font-size:34px;margin-top:10px}.principles .principles-heading>p{justify-self:start;font-size:13px}.principles-explorer{grid-template-columns:1fr;gap:14px}.principle-selector{display:grid;grid-template-columns:1fr 1fr;gap:7px}.principles .principle-choice{grid-template-columns:24px minmax(0,1fr) 16px;gap:6px;min-height:66px;padding:9px 8px;border-radius:9px}.principles .principle-choice>b{font-size:11px}.principle-detail{grid-template-columns:1fr;grid-template-rows:auto auto;min-height:0}.principle-visual{grid-column:1;grid-row:1;min-height:0;aspect-ratio:1.65;padding:9px;border-right:0;border-bottom:1px solid #DCE8F5}.principle-visual svg{width:100%;height:100%;max-height:none}.principle-detail-copy{grid-column:1;grid-row:2;padding:18px 16px 20px}.principle-detail-copy h3{font-size:23px}.principle-detail-copy>p{font-size:12px}.principle-detail-copy ul{margin-top:15px;gap:9px 12px}.principle-detail-copy li>span{font-size:12px}.principle-detail-copy li>small{font-size:10px}}
+
+/* Real-world principle photography, cropped to the responsive art panel */
+.principle-visual{padding:0;background:#EAF7FC}
+.principle-visual:before,.principle-visual:after{content:none}
+.principle-visual>img{position:absolute;inset:0;display:block;width:100%;height:100%;object-fit:cover;object-position:center 45%}
+@media(max-width:680px){.principle-visual{aspect-ratio:1.35}.principle-visual>img{object-position:center 44%}}
