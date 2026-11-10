@@ -1069,8 +1069,51 @@ html{scroll-behavior:smooth}
 @media(max-width:950px){.principles-explorer{grid-template-columns:minmax(235px,.8fr) minmax(0,1.2fr);gap:15px}.principle-detail{grid-template-columns:.78fr 1.22fr;grid-template-rows:minmax(480px,1fr)}.principle-detail-copy{padding:22px}.principle-detail-copy ul{gap:9px 12px}.principle-detail-copy li>small{font-size:10px}.principle-visual{padding:12px}}
 @media(max-width:680px){.principles.section-pad{padding:50px 18px 58px}.principles .principles-heading{grid-template-columns:1fr;gap:10px;margin-bottom:21px}.principles .principles-heading h2{font-size:34px;margin-top:10px}.principles .principles-heading>p{justify-self:start;font-size:13px}.principles-explorer{grid-template-columns:1fr;gap:14px}.principle-selector{display:grid;grid-template-columns:1fr 1fr;gap:7px}.principles .principle-choice{grid-template-columns:24px minmax(0,1fr) 16px;gap:6px;min-height:66px;padding:9px 8px;border-radius:9px}.principles .principle-choice>b{font-size:11px}.principle-detail{grid-template-columns:1fr;grid-template-rows:auto auto;min-height:0}.principle-visual{grid-column:1;grid-row:1;min-height:0;aspect-ratio:1.65;padding:9px;border-right:0;border-bottom:1px solid #DCE8F5}.principle-visual svg{width:100%;height:100%;max-height:none}.principle-detail-copy{grid-column:1;grid-row:2;padding:18px 16px 20px}.principle-detail-copy h3{font-size:23px}.principle-detail-copy>p{font-size:12px}.principle-detail-copy ul{margin-top:15px;gap:9px 12px}.principle-detail-copy li>span{font-size:12px}.principle-detail-copy li>small{font-size:10px}}
 
-/* Real-world principle photography, cropped to the responsive art panel */
-.principle-visual{padding:0;background:#EAF7FC}
+/* Responsive vector diagrams aligned to the reference artwork */
+.principle-detail{grid-template-columns:minmax(0,1fr);grid-template-rows:auto 260px;min-height:0}
+.principle-detail-copy{grid-column:1;grid-row:1;align-self:auto;padding:25px 28px 17px}
+.principle-detail-copy ul{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px 22px;margin-top:17px}
+.principle-detail-copy li{display:grid;grid-template-columns:minmax(125px,.7fr) minmax(0,1.3fr);gap:10px;align-items:start;padding-top:9px}
+.principle-visual{grid-column:1;grid-row:2;height:260px;min-height:0;padding:10px 24px;background:#F8FAFC;border-top:1px solid #DCE8F5;border-right:0;border-bottom:0}
 .principle-visual:before,.principle-visual:after{content:none}
-.principle-visual>img{position:absolute;inset:0;display:block;width:100%;height:100%;object-fit:cover;object-position:center 45%}
-@media(max-width:680px){.principle-visual{aspect-ratio:1.35}.principle-visual>img{object-position:center 44%}}
+.principle-visual>img{position:relative;inset:auto;display:block;width:100%;height:100%;object-fit:contain;object-position:center}
+@media(max-width:950px){.principle-detail{grid-template-rows:auto 230px}.principle-detail-copy{grid-column:1;grid-row:1}.principle-visual{grid-column:1;grid-row:2;height:230px}}
+@media(max-width:680px){.principle-detail{grid-template-columns:minmax(0,1fr);grid-template-rows:auto 170px}.principle-detail-copy{grid-column:1;grid-row:1;padding:19px 16px 15px}.principle-detail-copy ul{grid-template-columns:1fr 1fr;gap:8px 12px}.principle-detail-copy li{grid-template-columns:1fr;gap:3px}.principle-visual{grid-column:1;grid-row:2;height:170px;padding:8px 10px;border-bottom:0}}
+
+/* Client updates outside C7. */
+#main{padding-bottom:0}
+.footer{padding-bottom:24px}
+.bootcamp-logo-marquee{width:min(1200px,100%);margin:26px auto 0;overflow:hidden;border-block:1px solid #CFE4F0;background:#FFFFFF80;mask-image:linear-gradient(90deg,transparent,#000 5%,#000 95%,transparent)}
+.bootcamp-logo-rail{display:flex;width:max-content;animation:bootcamp-logo-scroll 32s linear infinite}
+.bootcamp-logo-marquee:hover .bootcamp-logo-rail,.bootcamp-logo-marquee:focus-within .bootcamp-logo-rail{animation-play-state:paused}
+.bootcamp-logo-track{display:flex;align-items:center;gap:10px;padding:12px 5px}
+.bootcamp-wordmark{display:flex;align-items:center;gap:10px;min-height:52px;min-width:185px;padding:9px 16px;border:1px solid #D8E5F3;border-radius:10px;background:#FFFFFF;color:#173B66}
+.bootcamp-wordmark small{font:600 10px var(--mono);color:#1769D2;letter-spacing:.1em}
+.bootcamp-wordmark b{font:600 13px/1.25 var(--display);letter-spacing:-.02em}
+@keyframes bootcamp-logo-scroll{to{transform:translateX(-50%)}}
+.method .method-intro h2{font-size:clamp(32px,3.4vw,42px);line-height:1.12}
+.final-cta-copy h2{font-size:clamp(34px,4vw,48px);line-height:1.12}
+@media(max-width:680px){.footer{padding-bottom:20px}.bootcamp-logo-marquee{margin-top:18px}.bootcamp-wordmark{min-width:160px;padding:8px 12px}.method .method-intro h2{font-size:32px}.final-cta-copy h2{font-size:34px}}
+@media(prefers-reduced-motion:reduce){.bootcamp-logo-rail{animation:none}}
+
+/* The supplied principle artwork stays uncropped and scales to its natural ratio. */
+.principle-detail{grid-template-columns:minmax(0,1fr);grid-template-rows:auto auto;min-height:0}
+.principle-detail-copy{grid-column:1;grid-row:1;align-self:auto;padding:25px 28px 18px}
+.principle-detail-copy ul{display:none}
+.principle-visual{grid-column:1;grid-row:2;width:100%;height:auto;min-height:0;padding:0;background:#fff;border:0;border-top:1px solid #DCE8F5;aspect-ratio:auto}
+.principle-visual>img{position:static;inset:auto;display:block;width:100%;height:auto;max-height:none;object-fit:contain;object-position:center}
+@media(max-width:950px){.principle-detail{grid-template-columns:minmax(0,1fr);grid-template-rows:auto auto;min-height:0}.principle-detail-copy{grid-column:1;grid-row:1}.principle-visual{grid-column:1;grid-row:2;width:100%;height:auto;min-height:0;padding:0}}
+@media(max-width:680px){.principle-detail{grid-template-columns:minmax(0,1fr);grid-template-rows:auto auto}.principle-detail-copy{grid-column:1;grid-row:1;padding:19px 16px 15px}.principle-visual{grid-column:1;grid-row:2;width:100%;height:auto;aspect-ratio:auto;padding:0;border-bottom:0}.principle-visual>img{width:100%;height:auto}}
+
+/* Keep the principle selector and selected artwork panel in one balanced frame. */
+.principles-explorer{grid-template-columns:minmax(285px,.78fr) minmax(0,1.5fr);align-items:stretch;gap:22px}
+.principle-selector{display:grid;grid-template-columns:minmax(0,1fr);grid-template-rows:repeat(5,minmax(0,1fr));align-self:stretch;gap:10px}
+.principles .principle-choice{height:100%;min-height:0;padding:14px 16px;grid-template-columns:34px minmax(0,1fr) 18px}
+.principles .principle-choice>b{font-size:clamp(13px,1vw,15px);line-height:1.3;font-weight:550}
+.principle-detail{height:620px;min-height:0;grid-template-columns:minmax(0,1fr);grid-template-rows:auto minmax(0,1fr);align-content:stretch}
+.principle-detail-copy{grid-column:1;grid-row:1;padding:24px 30px 18px}
+.principle-detail-copy h3{font-weight:550}
+.principle-visual{grid-column:1;grid-row:2;width:100%;height:100%;min-height:0;padding:12px 22px;display:grid;place-items:center;background:#fff}
+.principle-visual>img{position:static;width:100%;height:100%;max-height:none;object-fit:contain;object-position:center}
+@media(max-width:950px){.principles-explorer{grid-template-columns:minmax(0,1fr);gap:14px}.principle-selector{grid-template-columns:repeat(5,minmax(0,1fr));grid-template-rows:auto;gap:8px}.principles .principle-choice{min-height:84px;height:100%;padding:10px 9px;grid-template-columns:22px minmax(0,1fr);gap:7px}.principles .principle-choice>svg{display:none}.principles .principle-choice>b{font-size:12px}.principle-detail{height:560px}.principle-detail-copy{padding:22px 24px 16px}.principle-visual{padding:10px 16px}}
+@media(max-width:680px){.principles-explorer{grid-template-columns:minmax(0,1fr);gap:12px}.principle-selector{grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:auto;gap:7px}.principles .principle-choice{min-height:66px;height:auto;padding:9px 10px;grid-template-columns:22px minmax(0,1fr);gap:6px}.principles .principle-choice>b{font-size:11px;line-height:1.25}.principle-detail{height:auto;grid-template-rows:auto auto}.principle-detail-copy{grid-column:1;grid-row:1;padding:18px 16px 15px}.principle-visual{grid-column:1;grid-row:2;height:auto;padding:0 8px 8px}.principle-visual>img{width:100%;height:auto;max-height:none}}
